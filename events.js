@@ -64,13 +64,13 @@ makeRandomColor = (evt) => {
 }
 
 //return a number between 0 ~ 255
-function randomRgbNunber()
+function randomRgbNumber()
 {
 	return Math.floor(Math.random() * 255 + 1);
 }
 
 function generateRGB()
 {
-	var randomColor = "rgb(" + randomRgbNunber() + ", " + randomRgbNunber() + ", " + randomRgbNunber() + ")";
+	var randomColor = "rgb(" + randomRgbNumber() + ", " + randomRgbNumber() + ", " + randomRgbNumber() + ")";
 	return randomColor;
 }
