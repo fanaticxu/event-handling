@@ -6,33 +6,71 @@ document.addEventListener('DOMContentLoaded', start)
 function start () {
   // The first example is done for you. This will change the background colour of the first div
   // when you mouse over it.
-  one()
-    
+  one();
+  two(); 
+  three();
+  four();
   // Your turn! Create a new function called `two`, then call it from here.
 }
 
-function one () {
+  one = () => {
   // First, we have to find the element:
-  var one = document.getElementById('one')
-
+  var one = document.getElementById('one');
   // Next, we add an event listener to it:
-  one.addEventListener('mouseenter', makeBlue)
+  one.addEventListener('mouseenter', makeBlue);
 
   // Finally, we add one to make the colour white again
-  one.addEventListener('mouseleave', makeWhite)
+  one.addEventListener('mouseleave', makeWhite);
 }
+
 
 // CREATE FUNCTION two HERE
-
+two = () => {
+  var two = document.getElementById('two'); 
+  two.addEventListener('mouseenter', makeGreen);
+  two.addEventListener('mouseleave', makeWhite);
+}
 // CREATE FUNCTION three HERE
-
+three = () => {
+  var three = document.getElementById('three');
+  three.addEventListener('mouseenter', makeRed);
+  three.addEventListener('mouseleave', makeWhite);
+}
 // CREATE FUNCTION four HERE
-
+four = () => {
+  var four = document.getElementById('four');
+  four.addEventListener('click', makeRandomColor);
+}
 // Changes the background color of event's target
 function makeBlue (evt) {
-  evt.target.style.backgroundColor = 'blue'
+  evt.target.style.backgroundColor = 'blue';
 }
 
-function makeWhite (evt) {
-  evt.target.style.backgroundColor = 'white'
+makeWhite = (evt) => {
+  evt.target.style.backgroundColor = 'white';
+}
+
+makeGreen = (evt) => {
+  evt.target.style.backgroundColor = 'green';
+}
+
+makeRed = (evt) => {
+  evt.target.style.backgroundColor = 'red';
+}
+
+makeRandomColor = (evt) => {
+  var randomColor = generateRGB();
+  evt.target.style.backgroundColor = randomColor;
+}
+
+//return a number between 0 ~ 255
+function randomRgbNunber()
+{
+	return Math.floor(Math.random() * 255 + 1);
+}
+
+function generateRGB()
+{
+	var randomColor = "rgb(" + randomRgbNunber() + ", " + randomRgbNunber() + ", " + randomRgbNunber() + ")";
+	return randomColor;
 }
